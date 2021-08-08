@@ -15,7 +15,7 @@ function addMessages(doc) {
 	let data = doc.data()
 	let localName = getLocalStorageName()
 	const div = document.createElement('div')
-	if (localName === userName) {
+	if (localName === data.name) {
 		div.classList.add('right')
 		div.innerHTML = `${data.message} <span> : ${data.name} </span>`
 	} else {
