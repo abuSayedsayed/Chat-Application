@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sayed | Messenger</title>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- <div class="popup">
+            <input type="text" class="popup-input"  id="name" required>
+            <input type="password" class="popup-input" id="password">
+            <button>Join</button>
+        </div> -->
+		<main>
+			<h5>Welcome To Sayed's Mesenger</h5>
+			<div class="message-container" id="message-container"></div>
+			<form action="#" id="form">
+				<input type="text" required name="message" id="message" />
+				<button type="submit"><i class="fa fa-paper-plane"></i></button>
+			</form>
+		</main>
+
+		<script>
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			var firebaseConfig = {
+				apiKey: 'AIzaSyBAyWqHWjWxXjwsoCAKHXcXN0cJK45a6WU',
+				authDomain: 'chat-application-1c6b8.firebaseapp.com',
+				projectId: 'chat-application-1c6b8',
+				storageBucket: 'chat-application-1c6b8.appspot.com',
+				messagingSenderId: '262767057294',
+				appId: '1:262767057294:web:2eab0017dff016f30aacdf',
+				measurementId: 'G-1D020B80WT',
+			}
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig)
+			const db = firebase.firestore()
+		</script>
+		<script src="./main.js"></script>
+	</body>
+</html>
