@@ -8,6 +8,7 @@
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -21,16 +22,19 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<!-- <div class="popup">
-            <input type="text" class="popup-input"  id="name" required>
-            <input type="password" class="popup-input" id="password">
-            <button>Join</button>
-        </div> -->
+		<div class="popup">
+			<form action="#" id="sign-up-form">
+				<p id="msg"></p>
+				<input type="text"  placeholder="Input Your Email" class="popup-input" id="email" required />
+				<input type="password" placeholder="Input Your Password"  class="popup-input" id="password" />
+				<button>Join</button>
+			</form>
+		</div>
 		<main>
 			<div class="user-info">
 				<h3 class="name">E</h3>
 				<p class="desc">Lorem ipsum dolor sit amet.</p>
-				<i class="fa fa-ellipsis-v"></i>
+				<i id="log-out" class="fa fa-sign-out-alt"></i>
 			</div>
 
 			<div class="message-container" id="message-container"></div>
@@ -55,6 +59,7 @@
 			// Initialize Firebase
 			firebase.initializeApp(firebaseConfig)
 			const db = firebase.firestore()
+			const auth = firebase.auth()
 		</script>
 		<script src="./main.js"></script>
 	</body>
