@@ -35,7 +35,6 @@ function addMessages(doc) {
 	const scrollHeight = getScrollHeight()
 	messageContainer.appendChild(div)
 	messageContainer.scrollTo(0, scrollHeight)
-	console.dir(messageContainer)
 }
 // Getting the scroll height
 function getScrollHeight() {
