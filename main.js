@@ -1,6 +1,7 @@
 const form = document.getElementById('form')
 const messageContainer = document.getElementById('message-container')
-let userName = prompt('Please Told Your Name') || 'User'
+// let userName = prompt('Please Told Your Name') || 'User'
+let userName = 'user'
 localStorage.setItem('chatName', userName)
 
 form.addEventListener('submit', function (event) {
