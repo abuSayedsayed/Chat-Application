@@ -18,10 +18,10 @@ function addMessages(doc) {
 	const div = document.createElement('div')
 	if (localName === data.name) {
 		div.classList.add('right')
-		div.innerHTML = `${data.message} <span> : ${data.name} </span>`
+		div.innerHTML = `${data.message} <span>  ${data.name} </span>`
 	} else {
 		div.classList.add('left')
-		div.innerHTML = ` <span>  ${data.name} : </span> ${data.message} `
+		div.innerHTML = ` <span>  ${data.name}  </span> ${data.message} `
 	}
 	messageContainer.appendChild(div)
 }
