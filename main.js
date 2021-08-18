@@ -32,7 +32,17 @@ function addMessages(doc) {
 		div.classList.add('left')
 		div.innerHTML = ` <span>  ${data.name}  </span> ${data.message} `
 	}
+	const scrollHeight = getScrollHeight()
 	messageContainer.appendChild(div)
+	messageContainer.scrollTo(0, scrollHeight)
+	console.dir(messageContainer)
+}
+// Getting the scroll height
+function getScrollHeight() {
+	const rights = document.querySelectorAll('.right')
+	let topHeight = 1
+	rights.forEach((right, i) => (topHeight *= 20))
+	return topHeight * 2
 }
 // Adding a better usr experience
 auth.onAuthStateChanged((user) => {
@@ -41,9 +51,9 @@ auth.onAuthStateChanged((user) => {
 		setupUserInfo(user)
 		// Adding form message
 		addMsgToCollection(user)
+		messageContainer.innerHTML = ''
 		db.collection('Chats').onSnapshot((snapshot) => {
 			const changes = snapshot.docChanges()
-			messageContainer.innerHTML = ''
 			changes.forEach((change) => {
 				if (change.type === 'added') {
 					addMessages(change.doc)
@@ -54,6 +64,7 @@ auth.onAuthStateChanged((user) => {
 		popup.style.opacity = '1'
 		popup.style.pointerEvents = 'all'
 		messageContainer.innerHTML = `<h3 class="log-outed">Please Sign Up</h3>`
+		setupUserInfo()
 	}
 })
 
@@ -104,10 +115,14 @@ function showError(err) {
 
 // User info set up
 function setupUserInfo(user) {
+	const name = userInfo.querySelector('.name')
+	const desc = userInfo.querySelector('.desc')
 	if (user) {
-		const name = userInfo.querySelector('.name')
-		const desc = userInfo.querySelector('.desc')
 		name.innerText = user.email.charAt(0).toUpperCase()
 		desc.innerText = user.email
+	} else {
+		name.innerText = 'S'
+		desc.innerHTML = `
+		Welcome To<a href="https://abusayedsayed.github.io/My-Portfolio-You-Can-Visit" target="_blank" >Sayed'S</a> Messenger .	`
 	}
 }
